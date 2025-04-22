@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI代码助手</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- 引入Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- 引入Axios进行HTTP请求 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo"><i class="fas fa-code"></i> AI代码助手</h1>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#" @click="currentPage = 'home'" :class="{active: currentPage === 'home'}"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="#" @click="currentPage = 'analysis'" :class="{active: currentPage === 'analysis'}"><i class="fas fa-search"></i> 代码分析</a></li>
+                        <li><a href="#" @click="currentPage = 'suggestion'" :class="{active: currentPage === 'suggestion'}"><i class="fas fa-lightbulb"></i> 代码建议</a></li>
+                        <li><a href="#" @click="currentPage = 'problem'" :class="{active: currentPage === 'problem'}"><i class="fas fa-bug"></i> 问题解决</a></li>
+                        <li><a href="#" @click="currentPage = 'direct_question'" :class="{active: currentPage === 'direct_question'}"><i class="fas fa-question-circle"></i> 直接提问</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <!-- 首页 -->
+                <section v-if="currentPage === 'home'" class="home-page">
+                    <h2>欢迎使用AI代码助手</h2>
+                    <p>AI代码助手是一个强大的工具，可以帮助您分析代码、提供改进建议并解决编程问题。</p>
+                    <div class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-search fa-2x"></i></div>
+                            <h3>代码分析</h3>
+                            <p>分析您的代码质量，找出潜在问题和改进空间。</p>
+                            <button @click="currentPage = 'analysis'" class="btn">开始分析 <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-lightbulb fa-2x"></i></div>
+                            <h3>代码建议</h3>
+                            <p>获取针对您代码的具体改进建议和最佳实践。</p>
+                            <button @click="currentPage = 'suggestion'" class="btn">获取建议 <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-bug fa-2x"></i></div>
+                            <h3>问题解决</h3>
+                            <p>描述您遇到的编程问题，获取解决方案和解释。</p>
+                            <button @click="currentPage = 'problem'" class="btn">解决问题 <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-question-circle fa-2x"></i></div>
+                            <h3>直接提问</h3>
+                            <p>直接向AI提问任何问题，获取即时回答。</p>
+                            <button @click="currentPage = 'direct_question'" class="btn">立即提问 <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 代码分析页面 -->
+                <section v-if="currentPage === 'analysis'" class="analysis-page">
+                    <h2>代码分析</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="analysis-code">输入您的代码：</label>
+                            <textarea id="analysis-code" v-model="analysisData.code" rows="10" placeholder="在此粘贴您的代码..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="analysis-language">编程语言：</label>
+                            <select id="analysis-language" v-model="analysisData.language">
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                                <option value="csharp">C#</option>
+                                <option value="cpp">C++</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="analysis-context">上下文（可选）：</label>
+                            <textarea id="analysis-context" v-model="analysisData.context" rows="3" placeholder="提供代码的上下文信息..."></textarea>
+                        </div>
+                        <button @click="analyzeCode" class="btn btn-primary" :disabled="loading.analysis">{{ loading.analysis ? '分析中...' : '分析代码' }}</button>
+                    </div>
+
+                    <div v-if="results.analysis" class="results-container">
+                        <h3>分析结果</h3>
+                        <div class="result-section">
+                            <h4>代码质量</h4>
+                            <ul>
+                                <li v-for="(value, key) in results.analysis.code_quality" :key="key">
+                                    <strong>{{ key }}:</strong> {{ value }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="result-section">
+                            <h4>建议</h4>
+                            <ul>
+                                <li v-for="(suggestion, index) in results.analysis.suggestions" :key="index">
+                                    {{ suggestion }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="result-section">
+                            <h4>潜在问题</h4>
+                            <ul>
+                                <li v-for="(issue, index) in results.analysis.potential_issues" :key="index">
+                                    {{ issue }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="result-section">
+                            <h4>最佳实践</h4>
+                            <ul>
+                                <li v-for="(practice, index) in results.analysis.best_practices" :key="index">
+                                    {{ practice }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 代码建议页面 -->
+                <section v-if="currentPage === 'suggestion'" class="suggestion-page">
+                    <h2>代码建议</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="suggestion-code">输入您的代码：</label>
+                            <textarea id="suggestion-code" v-model="suggestionData.code" rows="10" placeholder="在此粘贴您的代码..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="suggestion-language">编程语言：</label>
+                            <select id="suggestion-language" v-model="suggestionData.language">
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                                <option value="csharp">C#</option>
+                                <option value="cpp">C++</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="improvement-type">改进类型：</label>
+                            <select id="improvement-type" v-model="suggestionData.improvement_type">
+                                <option value="general">通用</option>
+                                <option value="performance">性能</option>
+                                <option value="readability">可读性</option>
+                                <option value="security">安全性</option>
+                            </select>
+                        </div>
+                        <button @click="getSuggestions" class="btn btn-primary" :disabled="loading.suggestion">{{ loading.suggestion ? '生成中...' : '获取建议' }}</button>
+                    </div>
+
+                    <div v-if="results.suggestion" class="results-container">
+                        <h3>改进建议</h3>
+                        <div class="result-section">
+                            <h4>原始代码</h4>
+                            <pre><code>{{ results.suggestion.original_code }}</code></pre>
+                        </div>
+                        <div class="result-section">
+                            <h4>改进后的代码</h4>
+                            <pre><code>{{ results.suggestion.improved_code }}</code></pre>
+                        </div>
+                        <div class="result-section">
+                            <h4>解释</h4>
+                            <p>{{ results.suggestion.explanation }}</p>
+                        </div>
+                        <div class="result-section">
+                            <h4>改进点</h4>
+                            <ul>
+                                <li v-for="(point, index) in results.suggestion.improvement_points" :key="index">
+                                    {{ point }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 问题解决页面 -->
+                <section v-if="currentPage === 'problem'" class="problem-page">
+                    <h2>问题解决</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="problem-description">问题描述：</label>
+                            <textarea id="problem-description" v-model="problemData.problem_description" rows="5" placeholder="描述您遇到的编程问题..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="code-context">代码上下文（可选）：</label>
+                            <textarea id="code-context" v-model="problemData.code_context" rows="10" placeholder="提供相关的代码上下文..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="problem-language">编程语言：</label>
+                            <select id="problem-language" v-model="problemData.language">
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                                <option value="csharp">C#</option>
+                                <option value="cpp">C++</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" v-model="problemData.use_qianwen"> 使用阿里云千问API
+                                <span class="hint">(提供更专业的编程建议)</span>
+                            </label>
+                        </div>
+                        <button @click="solveProblem" class="btn btn-primary" :disabled="loading.problem">{{ loading.problem ? '解决中...' : '解决问题' }}</button>
+                    </div>
+
+                    <div v-if="results.solution" class="results-container">
+                        <h3>解决方案</h3>
+                        <div class="result-section">
+                            <h4>问题</h4>
+                            <p>{{ results.solution.problem }}</p>
+                        </div>
+                        <div class="result-section">
+                            <h4>解决方案代码</h4>
+                            <pre><code>{{ results.solution.solution_code }}</code></pre>
+                        </div>
+                        <div class="result-section">
+                            <h4>解释</h4>
+                            <p>{{ results.solution.explanation }}</p>
+                        </div>
+                        <div class="result-section" v-if="results.solution.additional_resources.length > 0">
+                            <h4>额外资源</h4>
+                            <ul>
+                                <li v-for="(resource, index) in results.solution.additional_resources" :key="index">
+                                    {{ resource }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 直接提问页面 -->
+                <section v-if="currentPage === 'direct_question'" class="direct-question-page">
+                    <h2>直接提问</h2>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="direct-question">您的问题：</label>
+                            <textarea id="direct-question" v-model="directQuestionData.question" rows="5" placeholder="输入您想问的任何问题..."></textarea>
+                        </div>
+                        <button @click="askDirectQuestion" class="btn btn-primary" :disabled="loading.directQuestion">{{ loading.directQuestion ? '思考中...' : '提交问题' }}</button>
+                    </div>
+
+                    <div v-if="results.directQuestion" class="results-container">
+                        <h3>回答</h3>
+                        <div class="result-section">
+                            <h4>问题</h4>
+                            <p>{{ results.directQuestion.problem }}</p>
+                        </div>
+                        <div class="result-section">
+                            <h4>回答</h4>
+                            <p>{{ results.directQuestion.explanation }}</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3><i class="fas fa-code"></i> AI代码助手</h3>
+                        <p>您的智能编程伙伴，随时为您提供专业的代码支持和建议。</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>功能</h3>
+                        <ul>
+                            <li><a href="#" @click="currentPage = 'analysis'">代码分析</a></li>
+                            <li><a href="#" @click="currentPage = 'suggestion'">代码建议</a></li>
+                            <li><a href="#" @click="currentPage = 'problem'">问题解决</a></li>
+                            <li><a href="#" @click="currentPage = 'direct_question'">直接提问</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>联系我们</h3>
+                        <p><i class="fas fa-envelope"></i> 303******@qq.com</p>
+                        <!-- <div class="social-icons">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 青青草原小分队. 保留所有权利.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

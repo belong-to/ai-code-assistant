@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- 标题 -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">AI代码助手系统架构图</text>
+  
+  <!-- 用户层 -->
+  <rect x="350" y="80" width="100" height="50" rx="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+  <text x="400" y="110" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">用户</text>
+  
+  <!-- 前端层 -->
+  <rect x="100" y="180" width="600" height="120" rx="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" />
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#333">前端层 (Vue.js)</text>
+  
+  <!-- 前端组件 -->
+  <rect x="130" y="220" width="100" height="40" rx="5" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" />
+  <text x="180" y="245" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">代码分析</text>
+  
+  <rect x="250" y="220" width="100" height="40" rx="5" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" />
+  <text x="300" y="245" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">代码建议</text>
+  
+  <rect x="370" y="220" width="100" height="40" rx="5" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" />
+  <text x="420" y="245" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">问题解决</text>
+  
+  <rect x="490" y="220" width="100" height="40" rx="5" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" />
+  <text x="540" y="245" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">直接提问</text>
+  
+  <!-- 后端层 -->
+  <rect x="100" y="350" width="600" height="200" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#333">后端层 (Python/Flask)</text>
+  
+  <!-- API层 -->
+  <rect x="130" y="390" width="540" height="50" rx="5" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" />
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">API路由 (/api/code-analysis, /api/code-suggestion, /api/problem-solving, /api/direct-question)</text>
+  
+  <!-- 服务层 -->
+  <rect x="130" y="450" width="250" height="80" rx="5" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" />
+  <text x="255" y="470" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">服务层</text>
+  <text x="255" y="490" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">代码分析器 (code_analyzer.py)</text>
+  <text x="255" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">问题解决器 (problem_solver.py)</text>
+  
+  <!-- 集成层 -->
+  <rect x="420" y="450" width="250" height="80" rx="5" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" />
+  <text x="545" y="470" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">API集成层</text>
+  <text x="545" y="490" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">阿里云千问API (qianwen_service.py)</text>
+  <text x="545" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">自定义API (custom_api_service.py)</text>
+  
+  <!-- 连接线 -->
+  <!-- 用户到前端 -->
+  <line x1="400" y1="130" x2="400" y2="180" stroke="#757575" stroke-width="2" stroke-dasharray="5,5" />
+  <polygon points="400,180 395,170 405,170" fill="#757575" />
+  
+  <!-- 前端到后端 -->
+  <line x1="400" y1="300" x2="400" y2="350" stroke="#757575" stroke-width="2" stroke-dasharray="5,5" />
+  <polygon points="400,350 395,340 405,340" fill="#757575" />
+  
+  <!-- API到服务层 -->
+  <line x1="255" y1="440" x2="255" y2="450" stroke="#757575" stroke-width="2" />
+  <polygon points="255,450 250,440 260,440" fill="#757575" />
+  
+  <!-- API到集成层 -->
+  <line x1="545" y1="440" x2="545" y2="450" stroke="#757575" stroke-width="2" />
+  <polygon points="545,450 540,440 550,440" fill="#757575" />
+  
+  <!-- 数据流标签 -->
+  <text x="420" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#757575">用户交互</text>
+  <text x="420" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#757575">HTTP请求/响应</text>
+  
+  <!-- 图例 -->
+  <rect x="620" y="80" width="15" height="15" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+  <text x="640" y="93" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">前端组件</text>
+  
+  <rect x="620" y="105" width="15" height="15" fill="#fff3e0" stroke="#ff9800" stroke-width="1" />
+  <text x="640" y="118" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">后端组件</text>
+  
+  <line x1="620" y1="130" x2="635" y2="130" stroke="#757575" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="640" y="133" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">数据流</text>
+</svg>

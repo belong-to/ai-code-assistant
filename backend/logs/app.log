@@ -1,0 +1,338 @@
+2025-04-22 10:31:52,505 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 10:31:52,535 [INFO] [werkzeug] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.139:5000
+2025-04-22 10:31:52,535 [INFO] [werkzeug] - [33mPress CTRL+C to quit[0m
+2025-04-22 10:31:52,551 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 10:31:53,353 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 10:31:53,361 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 10:31:53,380 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 10:31:58,335 [INFO] [__main__] - [req-1745289118-69ca36fb] 收到请求: GET / - IP: 192.168.0.139
+2025-04-22 10:31:58,337 [INFO] [__main__] - [req-1745289118-69ca36fb] 响应: 200 - 耗时: 0.001秒
+2025-04-22 10:31:58,338 [INFO] [werkzeug] - 192.168.0.139 - - [22/Apr/2025 10:31:58] "GET / HTTP/1.1" 200 -
+2025-04-22 10:31:58,451 [INFO] [__main__] - [req-1745289118-6e73638a] 收到请求: GET /favicon.ico - IP: 192.168.0.139
+2025-04-22 10:31:58,452 [WARNING] [__main__] - [req-1745289118-6e73638a] 资源未找到: /favicon.ico
+2025-04-22 10:31:58,453 [WARNING] [__main__] - [req-1745289118-6e73638a] 响应: 404 - 耗时: 0.002秒
+2025-04-22 10:31:58,454 [INFO] [werkzeug] - 192.168.0.139 - - [22/Apr/2025 10:31:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-22 10:32:06,982 [INFO] [__main__] - [req-1745289126-02776b0f] 收到请求: GET / - IP: 192.168.0.139
+2025-04-22 10:32:06,983 [INFO] [__main__] - [req-1745289126-02776b0f] 响应: 200 - 耗时: 0.001秒
+2025-04-22 10:32:06,983 [INFO] [werkzeug] - 192.168.0.139 - - [22/Apr/2025 10:32:06] "GET / HTTP/1.1" 200 -
+2025-04-22 10:32:56,036 [INFO] [__main__] - [req-1745289176-40ea62ed] 收到请求: GET / - IP: 127.0.0.1
+2025-04-22 10:32:56,041 [INFO] [__main__] - [req-1745289176-40ea62ed] 响应: 200 - 耗时: 0.004秒
+2025-04-22 10:32:56,041 [INFO] [werkzeug] - 127.0.0.1 - - [22/Apr/2025 10:32:56] "GET /?ide_webview_request_time=1745289115802 HTTP/1.1" 200 -
+2025-04-22 10:33:34,630 [INFO] [__main__] - [req-1745289214-5a38e3d1] 收到请求: OPTIONS /api/direct-question/ask - IP: 127.0.0.1
+2025-04-22 10:33:34,631 [INFO] [__main__] - [req-1745289214-5a38e3d1] 响应: 200 - 耗时: 0.001秒
+2025-04-22 10:33:34,633 [INFO] [werkzeug] - 127.0.0.1 - - [22/Apr/2025 10:33:34] "OPTIONS /api/direct-question/ask HTTP/1.1" 200 -
+2025-04-22 10:33:34,880 [INFO] [__main__] - [req-1745289214-3d3dd16e] 收到请求: POST /api/direct-question/ask - IP: 127.0.0.1
+2025-04-22 10:33:34,880 [INFO] [services.qianwen_service] - 调用千问API (尝试 1/3)
+2025-04-22 10:33:34,990 [INFO] [services.qianwen_service] - 千问API响应时间: 0.11秒
+2025-04-22 10:33:34,991 [ERROR] [services.qianwen_service] - 调用千问API时发生错误: 404 Client Error: Not Found for url: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-04-22 10:33:36,992 [INFO] [services.qianwen_service] - 调用千问API (尝试 2/3)
+2025-04-22 10:33:37,088 [INFO] [services.qianwen_service] - 千问API响应时间: 0.10秒
+2025-04-22 10:33:37,088 [ERROR] [services.qianwen_service] - 调用千问API时发生错误: 404 Client Error: Not Found for url: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-04-22 10:33:39,089 [INFO] [services.qianwen_service] - 调用千问API (尝试 3/3)
+2025-04-22 10:33:39,160 [INFO] [services.qianwen_service] - 千问API响应时间: 0.07秒
+2025-04-22 10:33:39,160 [ERROR] [services.qianwen_service] - 调用千问API时发生错误: 404 Client Error: Not Found for url: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-04-22 10:33:39,161 [WARNING] [__main__] - [req-1745289214-3d3dd16e] 响应: 500 - 耗时: 4.283秒
+2025-04-22 10:33:39,162 [INFO] [werkzeug] - 127.0.0.1 - - [22/Apr/2025 10:33:39] "[35m[1mPOST /api/direct-question/ask HTTP/1.1[0m" 500 -
+2025-04-22 10:55:43,691 [INFO] [werkzeug] -  * Detected change in 'E:\\ai-code-assistant\\backend\\services\\code_analyzer.py', reloading
+2025-04-22 10:55:43,700 [INFO] [werkzeug] -  * Detected change in 'E:\\ai-code-assistant\\backend\\services\\code_analyzer.py', reloading
+2025-04-22 10:55:44,702 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 10:58:13,280 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 10:58:13,309 [INFO] [werkzeug] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.139:5000
+2025-04-22 10:58:13,310 [INFO] [werkzeug] - [33mPress CTRL+C to quit[0m
+2025-04-22 10:58:13,317 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 10:58:14,010 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 10:58:14,022 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 10:58:14,047 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 10:58:24,666 [INFO] [__main__] - [req-1745290704-8e2df1fd] 收到请求: GET / - IP: 192.168.0.139
+2025-04-22 10:58:24,667 [INFO] [__main__] - [req-1745290704-8e2df1fd] 响应: 200 - 耗时: 0.002秒
+2025-04-22 10:58:24,667 [INFO] [werkzeug] - 192.168.0.139 - - [22/Apr/2025 10:58:24] "GET / HTTP/1.1" 200 -
+2025-04-22 11:07:59,802 [INFO] [werkzeug] -  * Detected change in 'E:\\ai-code-assistant\\backend\\services\\qianwen_service.py', reloading
+2025-04-22 11:08:00,568 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:02,415 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:02,427 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:02,456 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:34,022 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\__init__.py', reloading
+2025-04-22 11:08:34,272 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:36,427 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:36,450 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:36,486 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:36,583 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\metric.py', reloading
+2025-04-22 11:08:36,589 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\multiselect.py', reloading
+2025-04-22 11:08:36,603 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\number_input.py', reloading
+2025-04-22 11:08:36,620 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\plotly_chart.py', reloading
+2025-04-22 11:08:36,884 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\progress.py', reloading
+2025-04-22 11:08:36,890 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\deck_gl_json_chart.py', reloading
+2025-04-22 11:08:36,906 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\pyplot.py', reloading
+2025-04-22 11:08:36,970 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\radio.py', reloading
+2025-04-22 11:08:36,981 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\selectbox.py', reloading
+2025-04-22 11:08:36,989 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\select_slider.py', reloading
+2025-04-22 11:08:37,001 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\slider.py', reloading
+2025-04-22 11:08:37,033 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\snow.py', reloading
+2025-04-22 11:08:37,040 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\json.py', reloading
+2025-04-22 11:08:37,047 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\text.py', reloading
+2025-04-22 11:08:37,055 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\text_widgets.py', reloading
+2025-04-22 11:08:37,117 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\time_widgets.py', reloading
+2025-04-22 11:08:37,137 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\toast.py', reloading
+2025-04-22 11:08:37,147 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\write.py', reloading
+2025-04-22 11:08:37,159 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\arrow.py', reloading
+2025-04-22 11:08:37,210 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\vega_charts.py', reloading
+2025-04-22 11:08:37,255 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\widgets\\data_editor.py', reloading
+2025-04-22 11:08:37,387 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\cursor.py', reloading
+2025-04-22 11:08:37,394 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\proto\\__init__.py', reloading
+2025-04-22 11:08:37,450 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\config.py', reloading
+2025-04-22 11:08:37,499 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\type_util.py', reloading
+2025-04-22 11:08:37,523 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\runtime\\state\\__init__.py', reloading
+2025-04-22 11:08:37,553 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\runtime\\state\\session_state_proxy.py', reloading
+2025-04-22 11:08:37,557 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\elements\\lib\\utils.py', reloading
+2025-04-22 11:08:37,760 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:40,133 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:40,175 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:40,209 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:44,315 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\mysql\\connector\\errors.py', reloading
+2025-04-22 11:08:44,352 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\mysql\\connector\\abstracts.py', reloading
+2025-04-22 11:08:44,835 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:47,060 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:47,092 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:47,159 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:47,292 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\runnables\\utils.py', reloading
+2025-04-22 11:08:47,309 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\language_models\\__init__.py', reloading
+2025-04-22 11:08:47,325 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\language_models\\base.py', reloading
+2025-04-22 11:08:47,360 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\messages\\__init__.py', reloading
+2025-04-22 11:08:47,373 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\messages\\base.py', reloading
+2025-04-22 11:08:47,386 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\__init__.py', reloading
+2025-04-22 11:08:47,400 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\chat.py', reloading
+2025-04-22 11:08:47,438 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\base.py', reloading
+2025-04-22 11:08:47,459 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompt_values.py', reloading
+2025-04-22 11:08:47,476 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\runnables\\passthrough.py', reloading
+2025-04-22 11:08:47,501 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\__init__.py', reloading
+2025-04-22 11:08:47,731 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\pdf.py', reloading
+2025-04-22 11:08:47,799 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\base.py', reloading
+2025-04-22 11:08:47,804 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\document_loaders\\__init__.py', reloading
+2025-04-22 11:08:47,806 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\document_loaders\\base.py', reloading
+2025-04-22 11:08:47,837 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\word_document.py', reloading
+2025-04-22 11:08:47,853 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\text.py', reloading
+2025-04-22 11:08:47,858 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain\\retrievers\\multi_query.py', reloading
+2025-04-22 11:08:47,878 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\retrievers.py', reloading
+2025-04-22 11:08:47,891 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\documents\\__init__.py', reloading
+2025-04-22 11:08:47,894 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\documents\\base.py', reloading
+2025-04-22 11:08:47,915 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pydantic\\_internal\\_generate_schema.py', reloading
+2025-04-22 11:08:48,016 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\prompt.py', reloading
+2025-04-22 11:08:48,034 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\string.py', reloading
+2025-04-22 11:08:48,055 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pydantic\\_internal\\_decorators.py', reloading
+2025-04-22 11:08:48,476 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:50,710 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:50,752 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:50,971 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:51,936 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\base.py', reloading
+2025-04-22 11:08:51,988 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\accessor.py', reloading
+2025-04-22 11:08:52,055 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\arraylike.py', reloading
+2025-04-22 11:08:52,124 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\arrays\\base.py', reloading
+2025-04-22 11:08:52,203 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\indexes\\base.py', reloading
+2025-04-22 11:08:52,470 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-04-22 11:08:52,476 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-04-22 11:08:52,491 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_char_codes.py', reloading
+2025-04-22 11:08:53,144 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:08:55,979 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:08:55,996 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:08:56,027 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:08:56,237 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\compat\\numpy\\__init__.py', reloading
+2025-04-22 11:08:56,243 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\compat\\numpy\\function.py', reloading
+2025-04-22 11:08:56,260 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\nanops.py', reloading
+2025-04-22 11:08:56,352 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\_config\\__init__.py', reloading
+2025-04-22 11:08:56,369 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\internals\\__init__.py', reloading
+2025-04-22 11:08:56,375 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\internals\\array_manager.py', reloading
+2025-04-22 11:08:56,410 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\internals\\base.py', reloading
+2025-04-22 11:08:56,421 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\internals\\managers.py', reloading
+2025-04-22 11:08:56,487 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\internals\\blocks.py', reloading
+2025-04-22 11:08:57,390 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:09:00,322 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:09:00,356 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:09:00,408 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:09:05,821 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Scripts\\streamlit-script.py', reloading
+2025-04-22 11:09:06,643 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:09:08,497 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:09:08,519 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:09:08,548 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:09:37,704 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\env_util.py', reloading
+2025-04-22 11:09:37,707 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\runtime\\scriptrunner\\script_runner.py', reloading
+2025-04-22 11:09:37,707 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\streamlit\\runtime\\scriptrunner\\exec_code.py', reloading
+2025-04-22 11:09:37,709 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\threading.py', reloading
+2025-04-22 11:09:37,850 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:09:39,269 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:09:39,279 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:09:39,291 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:21:01,311 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\nest_asyncio.py', reloading
+2025-04-22 11:21:02,291 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:21:07,182 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:21:07,305 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:21:07,359 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:21:15,135 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\__init__.py', reloading
+2025-04-22 11:21:15,275 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\__init__.py', reloading
+2025-04-22 11:21:15,293 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_resource_api.py', reloading
+2025-04-22 11:21:15,367 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_data_api.py', reloading
+2025-04-22 11:21:15,388 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\context.py', reloading
+2025-04-22 11:21:15,422 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\state\\__init__.py', reloading
+2025-04-22 11:21:15,433 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\state\\query_params_proxy.py', reloading
+2025-04-22 11:21:15,442 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\state\\session_state_proxy.py', reloading
+2025-04-22 11:21:15,454 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\logger.py', reloading
+2025-04-22 11:21:15,507 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\elements\\lib\\utils.py', reloading
+2025-04-22 11:21:15,532 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\metrics_util.py', reloading
+2025-04-22 11:21:15,584 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\config.py', reloading
+2025-04-22 11:21:15,621 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\delta_generator_singletons.py', reloading
+2025-04-22 11:21:15,644 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\stats.py', reloading
+2025-04-22 11:21:15,651 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\cached_message_replay.py', reloading
+2025-04-22 11:21:15,704 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\hashing.py', reloading
+2025-04-22 11:21:15,837 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\caching\\cache_utils.py', reloading
+2025-04-22 11:21:15,887 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\__init__.py', reloading
+2025-04-22 11:21:16,150 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:21:18,972 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:21:19,003 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:21:19,071 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:21:19,201 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\arraylike.py', reloading
+2025-04-22 11:21:19,217 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\series.py', reloading
+2025-04-22 11:21:19,353 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\util\\_decorators.py', reloading
+2025-04-22 11:21:19,369 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\_typing.py', reloading
+2025-04-22 11:21:19,570 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\ultralytics\\__init__.py', reloading
+2025-04-22 11:21:19,581 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\ultralytics\\models\\__init__.py', reloading
+2025-04-22 11:21:19,607 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\ultralytics\\models\\yolo\\__init__.py', reloading
+2025-04-22 11:21:19,614 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\ultralytics\\models\\yolo\\model.py', reloading
+2025-04-22 11:21:19,623 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\ultralytics\\engine\\model.py', reloading
+2025-04-22 11:21:19,683 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\torch\\nn\\__init__.py', reloading
+2025-04-22 11:21:19,695 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\torch\\nn\\modules\\__init__.py', reloading
+2025-04-22 11:21:19,714 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\torch\\nn\\modules\\module.py', reloading
+2025-04-22 11:21:19,865 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\runtime\\uploaded_file_manager.py', reloading
+2025-04-22 11:21:20,378 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:21:22,599 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:21:22,614 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:21:22,654 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:21:22,801 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\io\\api.py', reloading
+2025-04-22 11:21:22,809 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\io\\sql.py', reloading
+2025-04-22 11:21:22,899 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\indexes\\multi.py', reloading
+2025-04-22 11:21:23,025 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\util\\_exceptions.py', reloading
+2025-04-22 11:21:23,035 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\indexes\\range.py', reloading
+2025-04-22 11:21:23,073 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\util\\_validators.py', reloading
+2025-04-22 11:21:23,176 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\dtypes\\generic.py', reloading
+2025-04-22 11:21:23,267 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\indexes\\frozen.py', reloading
+2025-04-22 11:21:23,299 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\algorithms.py', reloading
+2025-04-22 11:21:23,348 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\array_algos\\take.py', reloading
+2025-04-22 11:21:23,361 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\indexers\\__init__.py', reloading
+2025-04-22 11:21:23,369 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pandas\\core\\indexers\\utils.py', reloading
+2025-04-22 11:21:23,574 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\numpy\\_typing\\_scalars.py', reloading
+2025-04-22 11:21:24,153 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:21:26,345 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:21:26,365 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:21:26,393 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:21:26,484 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\deprecated\\tools.py', reloading
+2025-04-22 11:21:26,488 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic_core\\__init__.py', reloading
+2025-04-22 11:21:26,515 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\aliases.py', reloading
+2025-04-22 11:21:26,533 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\_internal\\_internal_dataclass.py', reloading
+2025-04-22 11:21:26,541 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\_internal\\_repr.py', reloading
+2025-04-22 11:21:26,553 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\_migration.py', reloading
+2025-04-22 11:21:26,576 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic_core\\core_schema.py', reloading
+2025-04-22 11:21:26,815 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\pydantic\\config.py', reloading
+2025-04-22 11:21:26,859 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\annotated_types\\__init__.py', reloading
+2025-04-22 11:21:26,909 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\exceptions.py', reloading
+2025-04-22 11:21:26,919 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\exceptions.py', reloading
+2025-04-22 11:21:26,923 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\middleware\\cors.py', reloading
+2025-04-22 11:21:26,941 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\middleware\\cors.py', reloading
+2025-04-22 11:21:26,951 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\responses.py', reloading
+2025-04-22 11:21:26,955 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\responses.py', reloading
+2025-04-22 11:21:27,008 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\uvicorn\\__init__.py', reloading
+2025-04-22 11:21:27,015 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\routing.py', reloading
+2025-04-22 11:21:27,074 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\params.py', reloading
+2025-04-22 11:21:27,109 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\middleware\\__init__.py', reloading
+2025-04-22 11:21:27,119 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\requests.py', reloading
+2025-04-22 11:21:27,141 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\types.py', reloading
+2025-04-22 11:21:27,164 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\routing.py', reloading
+2025-04-22 11:21:27,223 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\starlette\\__init__.py', reloading
+2025-04-22 11:21:27,228 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\utils.py', reloading
+2025-04-22 11:21:27,344 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\fastapi\\types.py', reloading
+2025-04-22 11:21:27,431 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\torch\\_tensor.py', reloading
+2025-04-22 11:21:27,664 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:21:29,626 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:21:29,648 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:21:29,686 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 11:31:43,717 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\envs\\stream\\Lib\\site-packages\\streamlit\\commands\\execution_control.py', reloading
+2025-04-22 11:31:43,959 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 11:31:46,297 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 11:31:46,332 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 11:31:46,390 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 12:18:06,769 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_openai\\__init__.py', reloading
+2025-04-22 12:18:06,794 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_openai\\chat_models\\__init__.py', reloading
+2025-04-22 12:18:06,824 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_openai\\chat_models\\base.py', reloading
+2025-04-22 12:18:07,620 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 12:18:09,888 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 12:18:09,911 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 12:18:09,948 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 12:18:10,358 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pydantic\\config.py', reloading
+2025-04-22 12:18:10,376 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\annotated_types\\__init__.py', reloading
+2025-04-22 12:18:10,518 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\runnables\\utils.py', reloading
+2025-04-22 12:18:10,541 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompt_values.py', reloading
+2025-04-22 12:18:10,548 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\messages\\__init__.py', reloading
+2025-04-22 12:18:10,561 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\messages\\utils.py', reloading
+2025-04-22 12:18:10,618 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\messages\\base.py', reloading
+2025-04-22 12:18:10,709 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\certifi\\__init__.py', reloading
+2025-04-22 12:18:10,715 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\certifi\\core.py', reloading
+2025-04-22 12:18:10,735 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\embeddings\\__init__.py', reloading
+2025-04-22 12:18:10,859 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\embeddings\\openai.py', reloading
+2025-04-22 12:18:10,916 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\embeddings\\__init__.py', reloading
+2025-04-22 12:18:10,927 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\embeddings\\embeddings.py', reloading
+2025-04-22 12:18:10,933 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\_api\\deprecation.py', reloading
+2025-04-22 12:18:10,967 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\llms\\__init__.py', reloading
+2025-04-22 12:18:11,142 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 12:18:12,689 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 12:18:12,711 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 12:18:12,744 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 12:19:20,204 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\__init__.py', reloading
+2025-04-22 12:19:20,228 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\vectorstores\\__init__.py', reloading
+2025-04-22 12:19:20,369 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\vectorstores\\qdrant.py', reloading
+2025-04-22 12:19:20,454 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\vectorstores\\__init__.py', reloading
+2025-04-22 12:19:20,458 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\vectorstores\\base.py', reloading
+2025-04-22 12:19:20,494 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\output_parsers\\__init__.py', reloading
+2025-04-22 12:19:20,503 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\output_parsers\\string.py', reloading
+2025-04-22 12:19:20,504 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\output_parsers\\transform.py', reloading
+2025-04-22 12:19:20,511 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\output_parsers\\base.py', reloading
+2025-04-22 12:19:20,523 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\language_models\\__init__.py', reloading
+2025-04-22 12:19:20,534 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\__init__.py', reloading
+2025-04-22 12:19:20,552 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\chat.py', reloading
+2025-04-22 12:19:20,584 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\prompts\\base.py', reloading
+2025-04-22 12:19:20,627 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\runnables\\passthrough.py', reloading
+2025-04-22 12:19:20,656 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\__init__.py', reloading
+2025-04-22 12:19:20,953 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_loaders\\pdf.py', reloading
+2025-04-22 12:19:21,157 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 12:19:22,667 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 12:19:22,690 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 12:19:22,723 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 12:19:22,806 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-04-22 12:19:22,813 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_nbit.py', reloading
+2025-04-22 12:19:22,828 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_char_codes.py', reloading
+2025-04-22 12:19:23,102 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-04-22 12:19:23,115 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2025-04-22 12:19:23,141 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\series.py', reloading
+2025-04-22 12:19:23,263 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\dtypes\\dtypes.py', reloading
+2025-04-22 12:19:23,344 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\dtypes\\base.py', reloading
+2025-04-22 12:19:23,381 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\pandas\\core\\shared_docs.py', reloading
+2025-04-22 12:19:23,535 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\callbacks\\manager.py', reloading
+2025-04-22 12:19:23,607 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_transformers\\__init__.py', reloading
+2025-04-22 12:19:23,624 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_community\\document_transformers\\long_context_reorder.py', reloading
+2025-04-22 12:19:23,653 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\load\\__init__.py', reloading
+2025-04-22 12:19:23,668 [INFO] [werkzeug] -  * Detected change in 'D:\\Users\\wangk\\anaconda3\\Lib\\site-packages\\langchain_core\\runnables\\config.py', reloading
+2025-04-22 13:38:21,405 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 13:38:21,443 [INFO] [werkzeug] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.139:5000
+2025-04-22 13:38:21,445 [INFO] [werkzeug] - [33mPress CTRL+C to quit[0m
+2025-04-22 13:38:21,461 [INFO] [werkzeug] -  * Restarting with watchdog (windowsapi)
+2025-04-22 13:38:22,611 [INFO] [__main__] - 启动服务器在 http://localhost:5000
+2025-04-22 13:38:22,617 [WARNING] [werkzeug] -  * Debugger is active!
+2025-04-22 13:38:22,639 [INFO] [werkzeug] -  * Debugger PIN: 105-145-397
+2025-04-22 13:38:29,760 [INFO] [__main__] - [req-1745300309-4c3c6bf3] 收到请求: GET / - IP: 127.0.0.1
+2025-04-22 13:38:29,764 [INFO] [__main__] - [req-1745300309-4c3c6bf3] 响应: 200 - 耗时: 0.002秒
+2025-04-22 13:38:29,765 [INFO] [werkzeug] - 127.0.0.1 - - [22/Apr/2025 13:38:29] "GET / HTTP/1.1" 200 -
