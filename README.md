@@ -103,6 +103,59 @@ ai-code-assistant/
 2. **API抽象**：统一的API接口设计，便于添加新功能
 3. **多API集成**：支持多种AI服务API，可根据需求切换
 
+## 项目启动指南
+
+### 环境要求
+
+- **前端**：现代浏览器（Chrome、Firefox、Edge等）
+- **后端**：Python 3.8+
+
+### 后端启动
+
+1. **安装依赖**
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   ```
+
+2. **配置环境变量**
+   - 复制`.env.example`文件为`.env`
+   - 填入API密钥（如需使用阿里云千问API）
+   ```
+   # 千问API配置
+   QIANWEN_API_KEY=your_api_key_here
+   QIANWEN_API_URL=https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+   QIANWEN_MODEL=qwen-turbo
+   
+   # 自定义API配置
+   CUSTOM_API_KEY=your_custom_api_key_here
+   CUSTOM_API_URL=your_custom_api_url_here
+   CUSTOM_API_MODEL=your_custom_model_name
+   ```
+
+3. **启动服务**
+   ```bash
+   python app.py
+   ```
+   服务将在 http://localhost:5000 上运行
+
+### 前端启动
+
+1. **打开前端页面**
+   - 直接在浏览器中打开`frontend/index.html`文件
+   - 或使用简单的HTTP服务器：
+   ```bash
+   cd frontend
+   # 如果安装了Python
+   python -m http.server 8000
+   # 或使用其他HTTP服务器
+   ```
+   前端页面将在 http://localhost:8000 上运行
+
+2. **访问应用**
+   - 在浏览器中访问前端页面
+   - 确保后端服务已经启动
+
 ## 使用指南
 
 当您需要帮助时，请提供具体的问题描述，我们的AI助手将为您提供有针对性的解决方案。如果需要更多信息来解决问题，系统会礼貌地询问。
