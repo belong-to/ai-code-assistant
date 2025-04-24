@@ -16,7 +16,7 @@ class QianwenService:
     
     def __init__(self):
         """初始化千问服务"""
-        self.api_key = os.getenv('QIANWEN_API_KEY','sk-d01cdfe592b9483ab56cf94172e157db')
+        self.api_key = os.getenv('QIANWEN_API_KEY','************')
         self.api_url = os.getenv('QIANWEN_API_URL', 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation')
         self.model = os.getenv('QIANWEN_MODEL', 'qwen-turbo')
         self.request_timeout = int(os.getenv('QIANWEN_TIMEOUT', '30'))
